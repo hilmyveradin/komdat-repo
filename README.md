@@ -8,91 +8,47 @@
 # Sekilas Tentang
 [`^ kembali ke atas ^`](#)
 
-[FocusStopWatch](https://github.com/hilmyveradin/focusstopwatch-vue) merupakan sebuah aplikasi web yang telah dirancang dengan tujuan utama untuk melakukan pemantauan dan pencatatan secara cermat mengenai sejauh mana kemampuan seseorang dalam menjaga tingkat fokusnya sebelum akhirnya mengalami distraksi atau kehilangan konsentrasi.
+[FocusStopWatch](https://github.com/hilmyveradin/focusstopwatch-vue) merupakan sebuah aplikasi web yang telah dirancang dengan tujuan utama untuk melakukan pemantauan dan pencatatan secara cermat mengenai sejauh mana kemampuan seseorang dalam menjaga tingkat fokusnya sebelum akhirnya mengalami distraksi atau kehilangan konsentrasi. Saat ini, situs FocusStopwatch.com dapat diakses melalui: http://172.245.185.120:3000/
 
 # Instalasi
 [`^ kembali ke atas ^`](#)
 
 #### Kebutuhan Sistem :
-- Unix, Linux atau Windows.
-- Apache Web server 1.3+.
-- PHP 5.2+.
-- MySQL 5.0+.
-- RAM minimal 64 Mb+
+- Virtual Private Server atau Virtual Machine berbasis Linux
+- Git
+- SSH Client
+- Node Package Manager versi ^17
+- Docker
+- Docker Compose
+- Nginx
 
 #### Proses Instalasi :
-1. Setup Docker melalui file `DockerFile`.
-   ```
-    # Step 1: Build the Vue.js application
-    FROM node:17 as build-stage
-    WORKDIR /app
-    COPY package*.json ./
-    RUN npm install
-    COPY . .
-    RUN npm run build
-    
-    # Step 2: Serve the app with Nginx
-    FROM nginx:stable-alpine as production-stage
-    COPY --from=build-stage /app/dist /usr/share/nginx/html
-    EXPOSE 80
-    CMD ["nginx", "-g", "daemon off;"]
-   ```
-
-2. Setup Docker Compose dengan file `docker-compose.yml`.
-   ```
-    version: '3'
-    
-    services:
-      vue-app:
-        container_name: vue_app_container
-        build:
-          context: .
-          dockerfile: Dockerfile
-        volumes:
-          - ./nginx.conf:/etc/nginx/conf.d/default.conf
-        ports:
-          - "80:80"
-   ```
-
-3. Setup server menggunakan Nginx melalui `nginx.conf`.
-   ```
-    server {
-        listen 80;
-    
-        location / {
-            root /usr/share/nginx/html;
-            index index.html;
-            try_files $uri $uri/ /index.html;
-        }
-    }
+1. Buat akses pada Virtual Machine atau Virtual Private Server. Jika menggunakan Virtual Private Server, gunakan perintah:
     ```
-   
-4. Establish komunikasi dengan server menggunakan protokol `ssh`. Jalankan di terminal.
-   Contoh command:
-   ```
-     ssh -p 10422 ubuntu@103.6.53.254
-   ```
+     ssh <USERNAME>@<IP ADDRESS> -p <PORT>
+    ```
+2. Pastikan Git terinstall di dalam sistem. Jika belum, gunakan perintah:
+    ```
+     sudo apt install git
+    ```
+3. Clone project ini GitHub. Dapat menggunakan perintah:
+    ```
+     git clone https://github.com/hilmyveradin/komdat-repo.git
+    ```
+4. Pindahkan direktori menuju komdat-repo. Dapat menggunakan perintah:
+    ```
+     cd komdat-repo
+    ```
+5. Buat file initialize.sh menjadi _executable_ dan ekekusi program initialize.sh. Gunakan perintah:
+    ```
+     chmod +x initialize.sh
+     ./initialize.sh
+    ```
+6. FocusStopwatch.com dapat diakses melalui alamat ip dengan port 3000
+    ```
+     <IP ADDRESS>:3000
+    ```
 
-5. Pindahkan file yang kita punya ke server menggunakan protokol `scp`. Contoh command:
-   ```
-     scp -P 10422 -r /Users/muhammadhilmytsaqifveradin/Documents/FRONTEND/focus-stopwatch-vue/focus-stopwatch ubuntu@103.6.53.254:/home/ubuntu/focus-stopwatch
-   ```
-
-6. Install aplikasi-aplikasi yang berhubungan dengan aplikasi kita di server, yaitu :
-   - docker
-   - docker-compose
-   - node version 17
-   - nginx
-
-7. Jalankan docker-compose-nya menggunakan command:
-   ```
-     docker-compose up -d --build
-   ```
-
-8. Cek apakah aplikasi sudah berjalan dengan memasukkan ip:port pada browser. Pada kasus ini, `ip = 103.6.53.254` dan `port = 10480`.
-   ```
-     http://103.6.53.254:10480 
-   ```
 
 # Cara Pemakaian
 [`^ kembali ke atas ^`](#)
