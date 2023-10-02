@@ -104,8 +104,7 @@ Adapun untuk perbandingan dengan aplikasi Pomodoro timer, aplikasi yang mirip ad
 # Referensi
 [`^ kembali ke atas ^`](#)
 
-1. [About PrestaShop](https://www.prestashop.com/) - PrestaShop
-2. [How to Log Into a VPS with PuTTY on Windows](https://www.digitalocean.com/community/tutorials/how-to-log-into-a-vps-with-putty-windows-users) - DigitalOcean
-3. [How to Install PrestaShop on Ubuntu 16.04](http://idroot.net/linux/install-prestashop-ubuntu-16-04/) - idroot
-4. [One Click Install PrestaShop](https://www.prestashop.com/blog/en/how-to-install-prestashop/) - PrestaShop
-5. [PrestaShop Review](http://whichshoppingcart.com/prestashop.html) - whishshoppingcart
+1. [Docker](https://www.docker.com/)
+2. [Nginx](https://www.nginx.com/)
+3. [ChronMe](http://online-stopwatch.chronme.com/)
+4. [Pomofocus](https://pomofocus.io/)
