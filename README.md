@@ -81,19 +81,33 @@ Dalam penggunaan aplikasi web FocusStopwatch, penting untuk melakukan proses Sig
 # Pembahasan
 [`^ kembali ke atas ^`](#)
 
-**FocusStopwatch** merupakan sebuah aplikasi web yang ditulis menggunakan `vue.js` dan `tailwind.css` untuk tampilannya, serta menggunakan `Supabase` untuk backend-nya. Aplikasi ini merupakan sejenis aplikasi stopwatch atau Pomodoro timer, dengan beberapa fitur berikut:
+**FocusStopwatch** merupakan sebuah aplikasi web yang ditulis menggunakan `vue.js` dan `tailwind.css` untuk tampilannya, serta menggunakan `Supabase` untuk backend-nya. Aplikasi ini merupakan sejenis aplikasi stopwatch atau Pomodoro timer.
+
+#### Fitur Utama
 
 - Timer stopwatch yang waktu-nya dapat dipisah berdasarkan "session"
 - Kustomisasi nama session
 - Fitur "Report" untuk menunjukkan laporan statistik waktu fokus dari user
 
-Sebagai perbandingan dengan aplikasi stopwatch, aplikasi lainnya yang mirip adalah *online stopwatch* oleh [**ChronMe**](http://online-stopwatch.chronme.com/). Berikut adalah beberapa perbedaan di antara kedua aplikasi:
+#### Kelebihan
+
+- Desain yang minimalis
+- Panjang waktu session bebas (dapat digunakan untuk *tracking* waktu fokus)
+- Terdapat fitur "Report" untuk melihat statistik waktu fokus
+
+#### Kekurangan
+
+- Tampilan waktu tidak sampai milisekon
+- Hanya menghitung waktu fokus. Tidak ada fitur terpisah untuk *tracking* waktu break
+- Tidak ada fitur *to-do-list*
+
+#### Perbandingan dengan aplikasi [**ChronMe**](http://online-stopwatch.chronme.com/)
 
 - **ChronMe** lebih seperti stopwatch pada umumnya, yaitu ketika kita meng-klik "Lap", waktu pada stopwatch akan tetap berjalan. Smentara itu, **FocusStopwatch** lebih ditujukan pada tracking waktu fokus. Sehingga, ketika kita meng-klik "Reset and Lap", waktu pada stopwatch akan ke-reset.
 - Tampilan waktu pada **ChronMe** juga menunjukkan milisekon, sedangkan **FocusStopwatch** hanya sampai sekon.
 - **FocusStopwatch** memiliki fitur "Report" yang menampilkan statistik waktu fokus dari user, sedangkan **ChronMe** tidak.
 
-Adapun untuk perbandingan dengan aplikasi Pomodoro timer, aplikasi yang mirip adalah [**PomoFocus.io**](https://pomofocus.io/). Berikut adalah beberapa perbedaan di antara kedua aplikasi:
+#### Perbandingan dengan aplikasi [**PomoFocus.io**](https://pomofocus.io/)
 
 - **PomoFocus.io** menggunakan konsep Pomodoro, sehingga timer-nya menghitung mundur dari 25 menit (atau 5 menit untuk break) sampai habis. Sementara itu, **FocusStopwatch** lebih mirip dengan stopwatch, yakni menghitung dari detik 0 dan terus naik.
 - Pada aplikasi **PomoFocus.io**, terdapat perbedaan antara sesi fokus dan break. Sementara itu, **FocusStopwatch** hanya menghitung waktu pada sesi fokus.
